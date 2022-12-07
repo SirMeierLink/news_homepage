@@ -1,0 +1,357 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --font-family-inter: 'Inter', sans-serif;
+    /* primary */
+    --primary-soft-orange: hsl(35, 77%, 62%);
+    --primary-soft-red: hsl(5, 85%, 63%);
+
+    /* Neutral */
+    --neutral-off-white: hsl(36, 100%, 99%);
+    --neutral-grayish-blue: hsl(233, 8%, 79%);
+    --neutral-dark-grayish-blue: hsl(236, 13%, 42%);
+    --neutral-very-dark-blue: hsl(240, 100%, 5%);
+
+    /* font-size */
+    --font-size: 15px;
+}
+
+body {
+    font-family: var(--font-family-inter);
+    font-size: var(--font-size);
+    background-color: var(--neutral-off-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(30, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+    max-width: 1440px;
+}
+
+header {
+    grid-column: 1 / -1;
+    grid-row: 1;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-icon-open,
+.menu-icon-close {
+    cursor: pointer;
+}
+
+.menu-icon-hide {
+    display: none;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    width: 80%;
+}
+
+nav ul li {
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--neutral-dark-grayish-blue);
+}
+
+nav ul li a:hover {
+    color: var(--primary-soft-red);
+}
+
+.left--bright-img {
+    grid-column: 1 / 23;
+}
+
+.left--bright-img img {
+    width: 100%;
+    grid-row: 2;
+}
+
+.left--bright-h1 {
+    grid-column: 1 / 10;
+    grid-row: 3;
+    font-size: 4.5rem;
+    line-height: 4rem;
+    font-weight: 800;
+}
+
+.left--bright-para {
+    grid-column: 13 / 23;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.left--bright-para p {
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+    color: var(--neutral-dark-grayish-blue);
+}
+
+.left--bright-a {
+    background-color: var(--primary-soft-red);
+    padding: 1rem 3rem;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    align-self: flex-start;
+}
+
+.left--bright-a:hover {
+    background-color: var(--neutral-very-dark-blue);
+}
+
+.right--tech {
+    grid-column: 23 / -1;
+    grid-row: 2 / 4;
+    padding: 1.5rem;
+    background-color: var(--neutral-very-dark-blue);
+    color: var(--neutral-dark-grayish-blue);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.right--tech h2 {
+    color: var(--primary-soft-orange);
+    font-size: 3rem;
+}
+
+.right--tech h3 {
+    margin-bottom: 1rem;
+}
+
+.right--tech p {
+    font-size: .98rem;
+}
+
+.right--tech div:not(div:last-child) {
+    border-bottom: 1px solid var(--neutral-grayish-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 2rem;
+}
+
+.right--tech a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.right--tech a:hover {
+    color: var(--primary-soft-orange);
+}
+
+.bottom-page h3 {
+    margin: .5rem 0 .5rem;
+}
+
+.retro-pcs,
+.laptops,
+.gaming {
+    grid-row: 5;
+}
+
+.retro-pcs {
+    grid-column: 1 / 8;
+}
+
+.laptops {
+    grid-column: 13 / 20;
+}
+
+.gaming {
+    grid-column: 23 / -1;
+}
+
+.bottom-page {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.bottom-page picture {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.bottom-page .number {
+    color: var(--neutral-grayish-blue);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.bottom-page p {
+    color: var(--neutral-dark-grayish-blue);
+}
+
+.bottom-page a {
+    text-decoration: none;
+    color: #000;
+}
+
+.bottom-page a:hover {
+    color: var(--primary-soft-red);
+}
+
+.bottom-page picture {
+    height: 100%;
+    width: 100%;
+}
+
+.bottom-page picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+@media screen and (max-width: 880px) {
+
+    .background::before {
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: rgba(0, 0, 0, .7);
+    }
+
+    .menu-icon-open {
+        display: block;
+    }
+
+    body {
+        position: relative;
+    }
+
+    nav {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    img[alt="icon menu close"] {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+    }
+
+    .menu-links {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        background-color: #fff;
+        width: 100%;
+        padding: 8rem 7rem 0 2rem;
+        height: 100vh;
+        display: none;
+    }
+
+    .menu-links li {
+        font-weight: 700;
+        margin-bottom: -20px;
+    }
+
+    .menu-icon-close {
+        text-align: right;
+    }
+
+    .menu-links a {
+        color: var(--neutral-very-dark-blue);
+
+    }
+
+    .right--tech h2 {
+        font-size: 2rem;
+        padding-bottom: 2rem;
+    }
+
+    main {
+        grid-template-columns: 350px;
+        grid-template-areas:
+            "header"
+            "figure"
+            "h1"
+            "left-para"
+            "right-tech"
+            "retro-pc"
+            "laptops"
+            "gaming"
+        ;
+        gap: 2rem;
+    }
+
+    .left--bright-h1 {
+        font-size: 3rem;
+        line-height: 3rem;
+    }
+
+    .left--bright-para p {
+        padding-bottom: 1rem;
+    }
+
+    header {
+        grid-area: header;
+    }
+
+    .left--bright-img {
+        grid-area: figure;
+    }
+
+    .left--bright-h1 {
+        grid-area: h1;
+        font-size: 2.6rem;
+    }
+
+    .left--bright-para {
+        grid-area: left-para;
+    }
+
+    .left--bright-para p {
+        font-size: inherit;
+    }
+
+    .right--tech {
+        grid-area: right-tech;
+    }
+
+    .retro-pcs {
+        grid-area: retro-pc;
+    }
+
+    .laptops {
+        grid-area: laptops;
+    }
+
+    .gaming {
+        grid-area: gaming;
+    }
+}
